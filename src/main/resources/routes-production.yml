@@ -1,0 +1,681 @@
+routeData:
+  - path: "/api/v2/bookings/*"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "getBooking"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2//bookings/*"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "getBookingWithDoubleSlash"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "bookingIndex"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings"
+    method: "POST"
+    uri: "FULFILMENT_CREATE"
+    name: "createBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/create_order"
+    method: "POST"
+    uri: "FALLBACK_CRS"
+    name: "createOrder"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/create_order_booking"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "createOrderBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/modify"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "modifyBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*"
+    method: "PUT"
+    uri: "FALLBACK_CRS"
+    name: "putUpdateBooking"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*"
+    method: "PATCH"
+    uri: "OMS_WRITE"
+    name: "patchUpdateBooking"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/update_order"
+    method: "PUT"
+    uri: "FALLBACK_CRS"
+    name: "putUpdateOrderV2"
+    order: 0
+    filters: []
+  - path: "/bookings/update_order"
+    method: "PUT"
+    uri: "FALLBACK_CRS"
+    name: "putUpdateOrder"
+    order: 0
+    filters: []
+  - path: "/api/v2/bookings/*/estimate_v2"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "estimateV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/complimentary_add_booking"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "complimentaryAddBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/update_sp"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "bulkUploadSp"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/automate_bill_refund"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "automateBillRefund"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/update_booking_guest"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "updateBookingGuest"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/add_company_details"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "addCompanyDetails"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/card_charge_for_ota_booking"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "cardChargeForOtaBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/add_exclusive_taxes"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "addExclusiveTaxes"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/mop_change_bulk_upload"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "mopChangeBulkUpload"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/transactions/verify_transaction_refundable"
+    method: "GET"
+    uri: "OMS_WRITE"
+    name: "verifyTransactionRefundable"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/update_mop"
+    method: "PUT"
+    uri: "OMS_WRITE"
+    name: "updateMop"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/oreo_automatic_refund"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "oreoAutomaticRefund"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/oreo_update_crs_neft"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "oreoUpdateCrsNeft"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/cash_at_hotel_refund"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "cashAtHotelRefund"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/update_tags_on_hotel"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "updateTagsOnHotel"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/post_booking_discount"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "postBookingDiscount"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/update_room_assignment"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "updateRoomAssignment"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/post_booking_referral"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "postBookingReferral"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/security_deposits/withdraw"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "withdrawSecurityDeposit"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/wizard/settle"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "wizardSettle"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/insurance/bill"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "insuranceBill"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/security_deposits"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "makeSecurityDeposit"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/bulk_upload_room_category_id"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "bulkUploadRoomCategoryId"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/pin_rooms"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "pinRooms"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/booking_categorization_metadata"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "bookingCategorizationMetadata"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/closest_booking"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "closestBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/bills"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "showBills"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/meal_bookings/summary"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "mealBookingsSummary"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/cancellation_policies"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "cancellationPolicies"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/estimate_discounts"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "estimateDiscounts"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/applicable_cancellation_charge"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "applicableCancellationCharge"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/cancellation_reasons"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "cancellationReasons"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/meal_bookings/booking_meals"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "bookingMeals"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bills/hotel_valid_bills"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "hotelValidBills"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/validate_booking_checkin_time"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "validateBookingCheckinTime"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/urn_history"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "urnHistory"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/details"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "aggregateBookingDetails"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2//bookings/details"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "aggregateBookingDetailsWithDoubleSlash"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/catalog"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "catalogDetails"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/call_manager"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "callManager"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/remove_booking"
+    method: "PUT"
+    uri: "OMS_WRITE"
+    name: "removeBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/bookings/*/history_versions"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "historyVersions"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/api/v2/pay&save"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "pay&Save"
+    order: 0
+    filters: []
+#without api endpoint routes
+  - path: "/v2/bookings/*"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "getBookingV2"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2//bookings/*"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "getBookingWithDoubleSlashV2"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "bookingIndexV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings"
+    method: "POST"
+    uri: "FULFILMENT_CREATE"
+    name: "createBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/create_order"
+    method: "POST"
+    uri: "FALLBACK_CRS"
+    name: "createOrderV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/create_order_booking"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "createOrderBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/modify"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "modifyBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*"
+    method: "PUT"
+    uri: "OMS_WRITE"
+    name: "putUpdateBookingV2"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*"
+    method: "PATCH"
+    uri: "OMS_WRITE"
+    name: "patchUpdateBookingV2"
+    order: 1
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/update_order"
+    method: "PUT"
+    uri: "FALLBACK_CRS"
+    name: "putUpdateOrderV2V2"
+    order: 0
+    filters: []
+  - path: "/bookings/update_order"
+    method: "PUT"
+    uri: "FALLBACK_CRS"
+    name: "putUpdateOrderV2"
+    order: 0
+    filters: []
+  - path: "/v2/bookings/*/estimate_v2"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "estimateV2V2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/complimentary_add_booking"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "complimentaryAddBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/update_sp"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "bulkUploadSpV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/automate_bill_refund"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "automateBillRefundV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/update_booking_guest"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "updateBookingGuestV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/add_company_details"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "addCompanyDetailsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/card_charge_for_ota_booking"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "cardChargeForOtaBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/add_exclusive_taxes"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "addExclusiveTaxesV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/mop_change_bulk_upload"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "mopChangeBulkUploadV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/transactions/verify_transaction_refundable"
+    method: "GET"
+    uri: "OMS_WRITE"
+    name: "verifyTransactionRefundableV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/update_mop"
+    method: "PUT"
+    uri: "OMS_WRITE"
+    name: "updateMopV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/oreo_automatic_refund"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "oreoAutomaticRefundV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/oreo_update_crs_neft"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "oreoUpdateCrsNeftV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/cash_at_hotel_refund"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "cashAtHotelRefundV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/update_tags_on_hotel"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "updateTagsOnHotelV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/post_booking_discount"
+    method: "POST"
+    uri: "OMS_READ"
+    name: "postBookingDiscountV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/update_room_assignment"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "updateRoomAssignmentV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/post_booking_referral"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "postBookingReferralV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/security_deposits/withdraw"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "withdrawSecurityDepositV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/wizard/settle"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "wizardSettleV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/insurance/bill"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "insuranceBillV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/security_deposits"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "makeSecurityDepositV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/bulk_upload_room_category_id"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "bulkUploadRoomCategoryIdV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/pin_rooms"
+    method: "POST"
+    uri: "OMS_WRITE"
+    name: "pinRoomsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/booking_categorization_metadata"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "bookingCategorizationMetadataV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/closest_booking"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "closestBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/bills"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "showBillsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/meal_bookings/summary"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "mealBookingsSummaryV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/cancellation_policies"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "cancellationPoliciesV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/estimate_discounts"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "estimateDiscountsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/applicable_cancellation_charge"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "applicableCancellationChargeV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/cancellation_reasons"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "cancellationReasonsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/meal_bookings/booking_meals"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "bookingMealsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bills/hotel_valid_bills"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "hotelValidBillsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/validate_booking_checkin_time"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "validateBookingCheckinTimeV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/urn_history"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "urnHistoryV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/details"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "aggregateBookingDetailsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2//bookings/details"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "aggregateBookingDetailsWithDoubleSlashV2"
+    order: 0
+    filters: [ AuthenticationFilter, UnauthorizedCheckFilter ]
+  - path: "/v2/catalog"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "catalogDetailsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/call_manager"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "callManagerV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/remove_booking"
+    method: "PUT"
+    uri: "OMS_WRITE"
+    name: "removeBookingV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/bookings/*/history_versions"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "historyVersionsV2"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/v2/pay&save"
+    method: "GET"
+    uri: "OMS_READ"
+    name: "pay&SaveV2"
+    order: 0
+    filters: []
+#Fallback Routes
+  - path: "/**"
+    method: "GET"
+    uri: "FALLBACK_CRS"
+    name: "fallbackHost"
+    order: 3
+    filters: []
+  - path: "/**"
+    method: "POST"
+    uri: "FALLBACK_CRS"
+    name: "postFallbackHost"
+    order: 3
+    filters: []
+  - path: "/**"
+    method: "PUT"
+    uri: "FALLBACK_CRS"
+    name: "putFallbackHost"
+    order: 3
+    filters: []
+  - path: "/**"
+    method: "PATCH"
+    uri: "FALLBACK_CRS"
+    name: "patchFallbackHost"
+    order: 3
+    filters: []
+  - path: "/**"
+    method: "DELETE"
+    uri: "FALLBACK_CRS"
+    name: "deleteFallbackHost"
+    order: 3
+    filters: []

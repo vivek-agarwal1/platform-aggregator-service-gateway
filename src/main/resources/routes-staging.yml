@@ -1,0 +1,13 @@
+routeData:
+  - path: "/api/v2/bookings/{segment}"
+    method: "GET"
+    uri: "http://prod-write-test-oms-write-1.ord.internal.oyorooms.ms/"
+    name: "getBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter]
+  - path: "/bookings"
+    method: "POST"
+    uri: "http://prod-write-test-oms-write-1.ord.internal.oyorooms.ms/"
+    name: "postBooking"
+    order: 0
+    filters: [AuthenticationFilter, UnauthorizedCheckFilter, RemoveAccessTokenFilter]

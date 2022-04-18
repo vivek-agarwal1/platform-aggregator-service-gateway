@@ -1,0 +1,18 @@
+FROM 483288903124.dkr.ecr.ap-southeast-1.amazonaws.com/devops/java:11
+
+MAINTAINER ORD <ordering.tech@oyorooms.com>
+
+ENV JAVA_OPTS=${JAVA_OPTS}
+
+COPY --chown=appuser:appuser target/ordering-gateway-service-0.0.1-SNAPSHOT.jar /home/appuser/target/ord-gateway.jar
+
+CMD exec java $JAVA_OPTS -javaagent:/home/appuser/elastic-apm-agent.jar \
+                         -Delastic.apm.service_name=$SERVICE_NAME \
+                         -Delastic.apm.application_packages=com.oyorooms \
+                         -Delastic.apm.environment=$APM_ENV \
+                         -Delastic.apm.server_urls=$APM_URLS \
+                         -Delastic.apm.secret_token=$APM_TOKEN \
+                         -Delastic.apm.recording=$APM_RECORDING_ACTIVE \
+                         -Delastic.apm.enable_log_correlation=true \
+                         -Dspring.profiles.active=$PROFILE \
+                         -jar target/ord-gateway.jar

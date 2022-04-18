@@ -1,0 +1,13 @@
+routeData:
+  - path: "/api/v2/users/get_users"
+    method: "POST"
+    uri: "https://core-api-1.inc.internal.oyorooms.ms"
+    name: "getUserProfiles"
+    order: 0
+    filters: []
+#  - path: "/api/v2/bookings"
+#    method: "POST"
+#    uri: "http://preprod-oms-api-1.ord.internal.oyorooms.io"
+#    name: "postBooking"
+#    order: 0
+#    filters: [AuthenticationFilter, UnauthorizedCheckFilter, RemoveAccessTokenFilter]

@@ -1,0 +1,10 @@
+<settings>
+	<servers>
+		<server>
+			<id>artifactory</id>
+			<username>${env.ARTIFACTORY_USERNAME}</username>
+			<password>${env.ARTIFACTORY_PASSWORD}</password>
+			<configuration></configuration>
+		</server>
+   	</servers>
+</settings>
